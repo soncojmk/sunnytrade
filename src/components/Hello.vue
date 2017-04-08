@@ -6,7 +6,7 @@
 </template>
 
 <script lang="coffee">
-x = require("./kek.coffee")
+x = require("../lib/http.coffee")
 module.exports =
   name: 'hello'
   data: ->
