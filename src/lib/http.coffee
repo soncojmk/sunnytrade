@@ -1,5 +1,6 @@
 urlEscape = (obj) ->
-  "?" + ("#{k}=#{v}" for k, v of obj).join("&")
+  if obj is undefined then ""
+  else "?" + ("#{k}=#{v}" for k, v of obj).join("&")
 
 toForm = (obj) ->
   form = new FormData()
@@ -10,21 +11,43 @@ toForm = (obj) ->
 module.exports.get = (url, params) ->
   fetch url + urlEscape(params),
     method: "GET"
-    credentials: "include"
 
 module.exports.put = (url, body) ->
   fetch url,
     method: "PUT"
-    credentials: "include"
     body: toForm(body)
 
 module.exports.post = (url, body) ->
   fetch url,
     method: "POST"
-    credentials: "include"
     body: toForm(body)
 
 module.exports.delete = (url) ->
   fetch url,
     method: "DELETE"
+
+module.exports.getcors = (url, params) ->
+  fetch url + urlEscape(params),
+    method: "GET"
+    mode: "cors"
+    credentials: "include"
+
+module.exports.putcors = (url, body) ->
+  fetch url,
+    method: "PUT"
+    mode: "cors"
+    credentials: "include"
+    body: toForm(body)
+
+module.exports.postcors = (url, body) ->
+  fetch url,
+    method: "POST"
+    mode: "cors"
+    credentials: "include"
+    body: toForm(body)
+
+module.exports.deletecors = (url) ->
+  fetch url,
+    method: "DELETE"
+    mode: "cors"
     credentials: "include"

@@ -6,11 +6,17 @@
 </template>
 
 <script lang="coffee">
-x = require("../lib/http.coffee")
+cap = require("../lib/capital-one.coffee")
+http = require("../lib/http.coffee")
 module.exports =
   name: 'hello'
+  created: ->
+    http.get "http://api.reimaginebanking.com/accounts", {key: cap.key}
+    .then (res) -> res.json()
+    .then (json) =>
+      @msg = json
   data: ->
-    msg: x.hi
+    msg: {}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
