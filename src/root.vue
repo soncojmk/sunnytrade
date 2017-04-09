@@ -67,7 +67,6 @@ a
 #footer-border
   bottom: 0px
   left: 0px
-  background-image: url("headerBorder.png")
   transform: scaleY(-1)
 
 footer
