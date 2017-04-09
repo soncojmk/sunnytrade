@@ -100,27 +100,6 @@ footer
 .flex-left
   margin-right: auto
 
-input, button, button.submit
-  display: block
-  width: 100%
-  padding: 0.5em
-  margin-bottom: 1em
-  color: #333333
-  background-color: white
-  border: 1px solid #999999
-  border-radius: 4px
-  box-shadow: 0px 0px 2px #CCCCCC
-  box-shadow: inset 0 0 3px 0px #CCCCCC
-
-input[type="submit"], button.submit
-  width: auto
-  padding: 0.5em
-  margin-bottom: 0
-  float: right
-  color: #333333
-  box-shadow: none
-  cursor: pointer
-
 .disabled
   color: #CCCCCC
 
@@ -131,4 +110,68 @@ input[type="submit"], button.submit
   width: 100%
   height: 100%
 
+
+.flex-left
+  margin-right: auto
+
+.input-group
+  display: flex
+  align-items: stretch
+  height: 34px
+  > *
+    border-radius: 0px 0px 0px 0px
+    height: 100%
+    border: 1px solid #999999
+    border-left: none
+    display: flex
+    align-items: center
+    padding: 0 0.5em
+  > *:first-child
+    border-radius: 4px 0px 0px 4px
+    border-left: 1px solid #999999
+  > *:last-child
+    border-radius: 0px 4px 4px 0px
+  > div, span
+    background: #F0F0F0
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+.button
+  cursor: pointer
+
+.menu-item
+  margin-left: 3em
+  font-size: 1.5em
+  a
+    font-size: 1em
+
+
+input, button, select, textarea
+  display: block
+  width: 100%
+  padding: 0.5em
+  color: #333333
+  background-color: white
+  border: 1px solid #999999
+  border-radius: 4px
+  box-shadow: 0px 0px 2px #CCCCCC
+  box-shadow: inset 0 0 3px 0px #CCCCCC
+  resize: none
+  -moz-appearance: none
+
+input[type="submit"], button
+  width: auto
+  padding: 0.5em
+  margin-bottom: 0
+  color: #333333
+  box-shadow: none
+  cursor: pointer
+  &:active
+    background: #F0F0F0
+  &::-moz-focus-inner
+    border: 0;
 </style>

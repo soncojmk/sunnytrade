@@ -12,6 +12,7 @@
     "coffee-loader": "^0.7.3",
     "coffee-script": "^1.12.4",
     "jquery": "^3.2.1",
+    "tween.js": "^16.6.0",
     "vue": "^2.2.2",
     "vue-router": "^2.3.0"
   },
